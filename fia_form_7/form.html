@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function action() {
+            let input = document.getElementById('password'); 
+            let icon = document.getElementById('icon'); 
+
+            if (input.type === 'password') {
+                input.type = 'text'; 
+                icon.src = 'asset/hide.png'; 
+            } else {
+                input.type = 'password';  
+                icon.src = 'asset/unhide.png'; 
+            }
+        }
+
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            let icon = document.getElementById('icon');
+            icon.addEventListener('click', action); 
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Login Form</h2>
+        <form>
+            <div class="fieldbox">
+                <input type="text" class="username" id="username" name="username" placeholder="Enter username" required/>
+                
+                <div class="password-wrapper">
+                    <input type="password" class="password" id="password" name="password" placeholder="Enter password" required/>
+                    <img id="icon" src="asset/unhide.png" alt="Hide/Unhide" />
+                </div>
+                
+                <button type="submit" class="login-button">LOGIN</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

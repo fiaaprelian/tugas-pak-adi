@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - VisionApp</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="screen-container">
+            <div class="screen" id="signup-screen">
+                <div class="back-button">
+                    <a href="social.html">&larr;</a>
+                </div>
+                <div class="logo">
+                    <img src="asset/logo.jpg" alt="VisionApp Logo">
+                </div>
+                <h1>VisionApp</h1>
+                <form id="signup-form" action="signup.php" method="POST">
+                    <div class="form-group">
+                        <input type="username" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+                        <img id="icon" src="asset/hide.png" alt="Toggle visibility">
+                    </div>
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">By clicking this form, you agree with our Terms and Policy</label>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePassword() {
+            let input = document.getElementById('password');
+            let icon = document.getElementById('icon');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.src = 'asset/eye.png';
+            } else {
+                input.type = 'password';
+                icon.src = 'asset/hide.png';
+            }
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            let icon = document.getElementById('icon');
+            icon.addEventListener('click', togglePassword);
+        });
+    </script>
+</body>
+</html>
